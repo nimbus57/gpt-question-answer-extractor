@@ -18,7 +18,6 @@
 
     // Pair the inner texts
     let pairs = [];
-    console.log("Total number of pairs: ", articles.length / 2)
     for (let i = 0; i < articles.length - 1; i += 2) {
         pairs.push([articles[i], articles[i + 1]]);
     }
