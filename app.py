@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify
 import os
 import json
+from markov import get_data
 
 app = Flask(__name__)
 
@@ -11,6 +12,13 @@ def home():
         <h1>Welcome to the Home Page</h1>
         <p><a href="/view-data">View JSON Data</a></p>
     '''
+
+@app.route('/markov')
+def markov():
+    initial_sentence = "The cat sat on the mat. It looked up at the sun. Birds chirped in the trees. The cat looked at the birds. The birds chirped at the cat. The cat sat in the trees. The sun looked down at the cat."
+    data = json.dumps(get_data(initial_sentence), indent=4)
+    return render_template('display_markov.html',initial_sentence=initial_sentence, data=data)
+
 
 # Second route - displays a page with JSON data (use a placeholder for now)
 @app.route('/view-data')

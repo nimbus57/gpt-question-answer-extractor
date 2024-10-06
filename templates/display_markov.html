@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markov Text Generator</title>
+</head>
+<body>
+    <h1>{{ initial_sentence }}</h1>
+    <pre>
+        <div>Basic idea is to build a map of all the inputs, in this case just a single word, to its output, a list that contains a count of all of the words that follow it</div>
+        <div>Next steps will be to start with one of the words in the list of keys</div>
+        <div>Then use a random number generator to help figure out which word comes next</div>
+        <div>Use an rng to pick the next word based on its probability</div>
+        <div>So entries that have a higher number would be expected to come up more frequently in the final text</div>
+        <div>Also, add text box to read in a random string</div>
+        <div>Also, pick and choose different parameters: 'pair' count, delimiters, etc...</div>
+        {{ data }}
+    </pre>
+</body>
+</html>
